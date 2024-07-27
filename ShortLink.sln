@@ -1,0 +1,34 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 17
+VisualStudioVersion = 17.10.35122.118
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShortLink.Test", "ShortLink.Test\ShortLink.Test.csproj", "{1B286710-BC23-4396-AA46-2C45B3F232ED}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShortLink.Database", "ShortLink.Database\ShortLink.Database.csproj", "{5F6C9BE7-C068-4D06-890F-CCDB629C7E2F}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ShortLink", "ShortLink\ShortLink.csproj", "{52E7E5BD-A31E-44FB-8143-F3CE1773548B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ShortLink.Config", "ShortLink.Config\ShortLink.Config.csproj", "{E9E5E86C-1366-4211-9999-A84F14A29EC7}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|x64 = Debug|x64
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{1B286710-BC23-4396-AA46-2C45B3F232ED}.Debug|x64.ActiveCfg = Debug|x64
+		{1B286710-BC23-4396-AA46-2C45B3F232ED}.Debug|x64.Build.0 = Debug|x64
+		{5F6C9BE7-C068-4D06-890F-CCDB629C7E2F}.Debug|x64.ActiveCfg = Debug|x64
+		{5F6C9BE7-C068-4D06-890F-CCDB629C7E2F}.Debug|x64.Build.0 = Debug|x64
+		{52E7E5BD-A31E-44FB-8143-F3CE1773548B}.Debug|x64.ActiveCfg = Debug|x64
+		{52E7E5BD-A31E-44FB-8143-F3CE1773548B}.Debug|x64.Build.0 = Debug|x64
+		{E9E5E86C-1366-4211-9999-A84F14A29EC7}.Debug|x64.ActiveCfg = Debug|x64
+		{E9E5E86C-1366-4211-9999-A84F14A29EC7}.Debug|x64.Build.0 = Debug|x64
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {43AA06C0-6898-47F4-B0A6-7848CBE4A753}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,7 @@
+{
+  "Shortlink": {
+    "BaseUrl": "http://localhost:55695/r/",
+    "DbConnection": "server=192.168.33.10;port=3306;user id=user;password=password;database=link_compactor;persistsecurityinfo=True;charset=utf8",
+    "MaxTimespan": 1209600
+  }
+}
