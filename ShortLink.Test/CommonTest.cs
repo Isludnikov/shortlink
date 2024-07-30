@@ -4,12 +4,7 @@ namespace ShortLink.Test;
 [TestClass]
 public class CommonTest
 {
-    /// <summary>
-    /// Gets or sets the test context which provides
-    /// information about and functionality for the current test run.
-    /// </summary>
-    public TestContext TestContext { get; set; }
-    //private static readonly Logger Logger = LogManager.GetCurrentClassLogger();
+    public TestContext TestContext { get; set; }//magic property
 
     [TestMethod]
     public void CryptoGenTest()
@@ -19,7 +14,7 @@ public class CommonTest
             for (var i = 0; i < 10; ++i)
             {
                 var str = CryptoHelper.GetRandomString(j);
-                TestContext.WriteLine(str);
+                TestContext.WriteLine($"link [{str}] len [{str.Length}]");
                 Assert.AreEqual(j, str.Length);
             }
         }

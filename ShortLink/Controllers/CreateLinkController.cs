@@ -4,6 +4,7 @@ using ShortLink.Database.Entities;
 using ShortLink.Helpers;
 using System.ComponentModel.DataAnnotations;
 using Microsoft.EntityFrameworkCore;
+using ShortLink.Attributes;
 using ShortLink.Config.Config;
 
 namespace ShortLink.Controllers;
@@ -11,8 +12,6 @@ namespace ShortLink.Controllers;
 [Route("create")]
 public class CreateLinkController(ILogger<CreateLinkController> logger, ShortLinkConfig config) : ControllerBase
 {
-    private readonly ILogger<CreateLinkController> logger = logger;
-
     [HttpPost(Name = "CreateLink")]
     public async Task<CreateLinkResponse> Post(CreateLinkRequest request)
     {
@@ -20,6 +19,7 @@ public class CreateLinkController(ILogger<CreateLinkController> logger, ShortLin
         var existingElement = await db.Links.FirstOrDefaultAsync(x => x.UrlLong == request.Url);
         if (existingElement != null)
         {
+            logger.LogDebug($"Url [{request.Url}] already exists");
             return new CreateLinkResponse { EndTime = existingElement.KillTime, Url = existingElement.UrlShort };
         }
 
@@ -31,6 +31,7 @@ public class CreateLinkController(ILogger<CreateLinkController> logger, ShortLin
         };
         db.Links.Add(newLink);
         await db.SaveChangesAsync();
+        logger.LogDebug($"New item added Id [{newLink.Id}] Url [{newLink.UrlLong}]");
         return new CreateLinkResponse { EndTime = newLink.KillTime, Url = config.BaseUrl + newLink.UrlShort };
     }
 }
@@ -45,6 +46,8 @@ public class CreateLinkRequest
 {
     [Required]
     [StringLength(3000)]
+    [UrlValid]
+    [IsLatin]
     public required string Url { get; init; }
     public ulong? Ttl { get; init; }
 }
